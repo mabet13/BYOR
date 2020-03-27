@@ -317,8 +317,8 @@ export default class Graphing {
             // TODO: Disabled until further notice (Share Button)
             console.log("BLIBPBLIBPBLIPBLIPBLIP: ",blip);
             let blipshareId = 'share-btn-' + blip.number;
-            let shareButton = blipItemDescription.append('p').html(blip.description+"<br>"+blip.myLink)
-            //let mylink = blipItemDescription.append('span').html(blip.link)
+            let shareButton = blipItemDescription.append('p').html(blip.description) //+"<br>"+blip.myLink)
+            let mylink = shareButton.append('span').html("<br><a href='http://google.se' target='_blank'>"+blip.link+"</a>");
         }
         // TODO: Disabled until further notice (Share Button)
         /*

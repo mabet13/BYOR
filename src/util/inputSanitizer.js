@@ -24,7 +24,7 @@ export default class InputSanitizer {
         blip.isNew = sanitizeHtml(blip.isNew, restrictedOptions);
         blip.ring = sanitizeHtml(blip.ring, restrictedOptions);
         blip.quadrant = sanitizeHtml(blip.quadrant, restrictedOptions);
-        blip.myLink = sanitizeHtml(blip.myLink, restrictedOptions);
+        blip.link = sanitizeHtml(blip.link, restrictedOptions);
 
         return blip;
     };
@@ -37,21 +37,21 @@ export default class InputSanitizer {
         const isNewIndex = header.indexOf('isNew');
         const quadrantIndex = header.indexOf('quadrant');
         const ringIndex = header.indexOf('ring');
-        const myLinkIndex = header.indexOf('myLink');
+        const linkIndex = header.indexOf('link');
 
         const description = descriptionIndex === -1 ? '' : blip[descriptionIndex];
         const name = nameIndex === -1 ? '' : blip[nameIndex];
         const isNew = isNewIndex === -1 ? '' : blip[isNewIndex];
         const ring = ringIndex === -1 ? '' : blip[ringIndex];
         const quadrant = quadrantIndex === -1 ? '' : blip[quadrantIndex];
-        const myLink = myLinkIndex === -1 ? '' : blip[myLinktIndex];
+        const link = linkIndex === -1 ? '' : blip[linkIndex];
 
         blip.description = sanitizeHtml(description, relaxedOptions);
         blip.name = sanitizeHtml(name, restrictedOptions);
         blip.isNew = sanitizeHtml(isNew, restrictedOptions);
         blip.ring = sanitizeHtml(ring, restrictedOptions);
         blip.quadrant = sanitizeHtml(quadrant, restrictedOptions);
-        blip.myLink = sanitizeHtml(myLink, restrictedOptions);
+        blip.link = sanitizeHtml(link, restrictedOptions);
 
         return blip;
     };

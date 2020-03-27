@@ -7,16 +7,16 @@ import InputSanitizer from "./inputSanitizer";
 export default class CsvDocument {
     constructor() {
         this.values = [
-            {id: "1", name: "Update Salary",        ring: "dev",          quadrant: "People and Culture",  isNew: "true",  description: "Increase the salary of employees by 20%", myLink: "myLink"},
-            {id: "2", name: "Password Changer",     ring: "production",   quadrant: "IKEA IT",             isNew: "false", description: "This tool allows users to change the IKEA account password by themselves", myLink: "myLink"},
-            {id: "3", name: "Robotic Chat",         ring: "production",   quadrant: "IKEA IT",             isNew: "false", description: "Robotic chat with user to solve IT issues", myLink: "myLink"},
-            {id: "4", name: "Ultimate SAC",         ring: "test",         quadrant: "Retail",              isNew: "false", description: "This tool allows a robot to create a SAC in SAMS", myLink: "myLink"},
-            {id: "5", name: "Missing and Damaged",  ring: "deprecated",   quadrant: "Retail",              isNew: "false", description: "This tool allows a robot to create a SAC in SAMS", myLink: "myLink"},
-            {id: "6", name: "Automated car parking",   ring: "test",      quadrant: "Others",              isNew: "false", description: "Customers leave their cars at the entrance and a robot take the car to a parking slot", myLink: "myLink"},
-            {id: "7", name: "Orders Overview",      ring: "production",   quadrant: "Retail",              isNew: "false", description: "Does something that is helpful to someone", myLink: "myLink"},
-            {id: "8", name: "UAT - Cancellations",  ring: "production",   quadrant: "Retail",              isNew: "false", description: "Cancels it and it does it well", myLink: "myLink"},
-            {id: "9", name: "Connecting Sales",     ring: "production",   quadrant: "People and Culture",  isNew: "false", description: "Nokia: Connecting People", myLink: "myLink"},
-            {id: "10", name: "ACI Refund_Invoker",  ring: "production",   quadrant: "Retail",              isNew: "false", description: "Invokes the spirits of the Deads", myLink: "myLink"}
+            {id: "1", name: "Update Salary",        ring: "dev",          quadrant: "People and Culture",  isNew: "true",  description: "Increase the salary of employees by 20%", link: "myLink"},
+            {id: "2", name: "Password Changer",     ring: "production",   quadrant: "IKEA IT",             isNew: "false", description: "This tool allows users to change the IKEA account password by themselves", link: "myLink"},
+            {id: "3", name: "Robotic Chat",         ring: "production",   quadrant: "IKEA IT",             isNew: "false", description: "Robotic chat with user to solve IT issues", link: "myLink"},
+            {id: "4", name: "Ultimate SAC",         ring: "test",         quadrant: "Retail",              isNew: "false", description: "This tool allows a robot to create a SAC in SAMS", link: "myLink"},
+            {id: "5", name: "Missing and Damaged",  ring: "deprecated",   quadrant: "Retail",              isNew: "false", description: "This tool allows a robot to create a SAC in SAMS", link: "myLink"},
+            {id: "6", name: "Automated car parking",   ring: "test",      quadrant: "Others",              isNew: "false", description: "Customers leave their cars at the entrance and a robot take the car to a parking slot", link: "myLink"},
+            {id: "7", name: "Orders Overview",      ring: "production",   quadrant: "Retail",              isNew: "false", description: "Does something that is helpful to someone", link: "myLink"},
+            {id: "8", name: "UAT - Cancellations",  ring: "production",   quadrant: "Retail",              isNew: "false", description: "Cancels it and it does it well", link: "myLink"},
+            {id: "9", name: "Connecting Sales",     ring: "production",   quadrant: "People and Culture",  isNew: "false", description: "Nokia: Connecting People", link: "myLink"},
+            {id: "10", name: "ACI Refund_Invoker",  ring: "production",   quadrant: "Retail",              isNew: "false", description: "Invokes the spirits of the Deads", link: "myLink"}
         ];
         //this._url = url;
     }
