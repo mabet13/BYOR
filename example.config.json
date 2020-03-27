@@ -1,0 +1,21 @@
+{
+  "legend": {
+    "triangleKey": "New or moved",
+    "circleKey": "no change"
+  },
+  "quadrants": [
+    "tools",
+    "platforms",
+    "languages",
+    "frameworks"
+  ],
+  "rings": [
+    "adopt",
+    "trial",
+    "assess",
+    "hold"
+  ],
+  "radarBaseUrl": "myfilehoster.com/user/files/CSVs/[VERSION]/[PLATFORM].csv",
+  "CsvQueryParams": {"VERSION": "latest", "PLATFORM": ""},
+  "footerText": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br>dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
+}

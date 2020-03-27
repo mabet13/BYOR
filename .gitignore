@@ -1,0 +1,21 @@
+node_modules
+bower_components
+dist
+*.swa
+*.swp
+*.swo
+config.json
+package-lock.json
+yarn.lock
+
+# RSG Images
+/src/images/additionalLogo.png
+/src/images/headercomp.png
+
+coverage/
+
+.idea/
+.DS_Store
+
+spec/end_to_end_tests/reports/
+cypress/
