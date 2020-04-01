@@ -315,7 +315,6 @@ export default class Graphing {
 
         if (blip.description) {
             // TODO: Disabled until further notice (Share Button)
-            console.log("BLIBPBLIBPBLIPBLIPBLIP: ",blip);
             let blipshareId = 'share-btn-' + blip.number;
             let shareButton = blipItemDescription.append('p').html(blip.description) //+"<br>"+blip.myLink)
             let mylink = shareButton.append('span').html("<br><a href='http://google.se' target='_blank'>"+blip.link+"</a>");
@@ -544,8 +543,8 @@ export default class Graphing {
         header = select('header');
 
         if (internPage) {
-            header.append('br');
-            header.append('br');
+            /*header.append('br');
+            header.append('br');*/
         }
 
         header = header.append('div').attr('class', 'container');
@@ -554,7 +553,7 @@ export default class Graphing {
             .append('div').attr('class', 'row')
             .append('div').attr('class', 'col-sm');
 
-        tmpHeader.append('br');
+        //tmpHeader.append('br');
 
         tmpHeader.append('div')
             .attr('class', 'd-none d-md-block')

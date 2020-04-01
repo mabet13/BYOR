@@ -1,12 +1,12 @@
-import {csv} from "d3-fetch";
-import ContentValidator from "./contentValidator";
-import {extractFileName, searchBlipByParam} from "./util";
+//import {csv} from "d3-fetch";
+//import ContentValidator from "./contentValidator"
+//import {extractFileName, searchBlipByParam} from "./util";
 import {plotRadar} from "./factory";
-import InputSanitizer from "./inputSanitizer";
+//import InputSanitizer from "./inputSanitizer";
 
 export default class CsvDocument {
     constructor() {
-        this.values = [
+        /*this.values = [
             {id: "1", name: "Update Salary",        ring: "dev",          quadrant: "People and Culture",  isNew: "true",  description: "Increase the salary of employees by 20%", link: "myLink"},
             {id: "2", name: "Password Changer",     ring: "production",   quadrant: "IKEA IT",             isNew: "false", description: "This tool allows users to change the IKEA account password by themselves", link: "myLink"},
             {id: "3", name: "Robotic Chat",         ring: "production",   quadrant: "IKEA IT",             isNew: "false", description: "Robotic chat with user to solve IT issues", link: "myLink"},
@@ -17,13 +17,20 @@ export default class CsvDocument {
             {id: "8", name: "UAT - Cancellations",  ring: "production",   quadrant: "Retail",              isNew: "false", description: "Cancels it and it does it well", link: "myLink"},
             {id: "9", name: "Connecting Sales",     ring: "production",   quadrant: "People and Culture",  isNew: "false", description: "Nokia: Connecting People", link: "myLink"},
             {id: "10", name: "ACI Refund_Invoker",  ring: "production",   quadrant: "Retail",              isNew: "false", description: "Invokes the spirits of the Deads", link: "myLink"}
-        ];
+        ];*/
         //this._url = url;
     }
 
-    createBlips(queryParams) {
-        let data = this.values;
-        //let columnNames = ['id', 'name', 'ring', 'quadrant', 'isNew', 'description'];
+    async loadSolutions() {
+        let response = await fetch(`http://itseelm-nt4464/rpacatalog/php/getsolutions.php`);
+        let data = await response.json();
+        return data;
+    }
+
+
+    async createBlips(queryParams) {
+        let data = await this.loadSolutions();
+
         let blips = data;
         let graphingRadar = plotRadar('RPA Catalog', blips, 'CSV File', []);
         data.forEach(bl => bl.id = decodeURIComponent(bl.id.replace(/\+/g, ' ')));

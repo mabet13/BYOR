@@ -63,7 +63,7 @@ export function plotRadar(title, blips, currentRadarName, alternativeRadars) {
         radar.currentSheetName = currentRadarName;
     }
 
-    let graphingRadar = new GraphingRadar(600, radar);
+    let graphingRadar = new GraphingRadar(800, radar);
     graphingRadar.init();
     graphingRadar.plot();
     graphingRadar.createCustomHomeLink(select('header').select('div.container'));
@@ -104,11 +104,11 @@ export function plotHeader() {
     }
 
     let main = select('main');
-    main.append('br');
+    //main.append('br');
 
     if (internPage) {
-        main.append('br');
-        main.append('br');
+        /*main.append('br');
+        main.append('br');*/
     }
 
     main.append('div')

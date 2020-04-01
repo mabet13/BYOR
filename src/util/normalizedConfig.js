@@ -1,9 +1,9 @@
 let config;
-try {
+/*try {
     config = require('../../config.json');
 } catch (e) {
     console.log('no config.json available.');
-}
+}*/
 export let normalizedConfig = {};
 
 export function getConfig(blips = []) {
