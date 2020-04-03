@@ -317,7 +317,7 @@ export default class Graphing {
             // TODO: Disabled until further notice (Share Button)
             let blipshareId = 'share-btn-' + blip.number;
             let shareButton = blipItemDescription.append('p').html(blip.description) //+"<br>"+blip.myLink)
-            let mylink = shareButton.append('span').html("<br><a href='http://google.se' target='_blank'>"+blip.link+"</a>");
+            let mylink = shareButton.append('span').html("<br><a href='http://google.se' target='_blank'>Link</a>");
         }
         // TODO: Disabled until further notice (Share Button)
         /*
@@ -557,7 +557,11 @@ export default class Graphing {
 
         tmpHeader.append('div')
             .attr('class', 'd-none d-md-block')
-            .html('<a href="/" target="_top"><img id="headerimg" class="img-fluid" src="" alt="headerImage"/></a>');
+            // .html('<a href="/" target="_top"><img id="headerimg" class="img-fluid" src="" alt="headerImage"/></a>');
+            .on('click', () => {
+                this.redrawFullRadar();
+            })
+            .html('<span id="headerimg"><h2>RPA Solutions Catalog</h2></span>');
 
         document.getElementById('headerimg').setAttribute('src', './images/' + (getConfig().header ? getConfig().header : 'tech-radar-landing-page-wide.png'));
 
@@ -610,8 +614,8 @@ export default class Graphing {
                 });
         });
 
-        buttonsGroup.append('div').attr('class', 'col-sm')
-            .html('Plattform: <strong>' + document.title + '</strong>');
+        /*buttonsGroup.append('div').attr('class', 'col-sm')
+            .html('Plattform: <strong>' + document.title + '</strong>');*/
 
         buttonsGroup.append('div')
             .classed('search-box col', true)
