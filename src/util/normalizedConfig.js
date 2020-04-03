@@ -26,7 +26,7 @@ export function createConfig(blips) {
                 triangleKey: 'New or moved',
                 circleKey: 'No change'
             },
-            footerText: "footerText",
+            footerText: 'Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>.',
             radarBaseUrl: " ",
             CsvQueryParams: {test: "test"}
         };

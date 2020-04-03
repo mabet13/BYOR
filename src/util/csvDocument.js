@@ -22,7 +22,9 @@ export default class CsvDocument {
     }
 
     async loadSolutions() {
-        let response = await fetch(`http://itseelm-nt4464/rpacatalog/php/getsolutions.php`);
+        let response = await fetch(`php/getsolutions.php`);
+        //let response = await fetch(`http://itseelm-nt4464/rpacatalog/php/getsolutions.php`);
+        
         let data = await response.json();
         return data;
     }
@@ -32,7 +34,7 @@ export default class CsvDocument {
         let data = await this.loadSolutions();
 
         let blips = data;
-        let graphingRadar = plotRadar('RPA Catalog', blips, 'CSV File', []);
+        let graphingRadar = plotRadar('RPA Solutions Catalog', blips, 'CSV File', []);
         data.forEach(bl => bl.id = decodeURIComponent(bl.id.replace(/\+/g, ' ')));
         if (queryParams.search) {
             searchBlipByParam(graphingRadar, queryParams.search);
