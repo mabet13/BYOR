@@ -22,8 +22,8 @@ export default class CsvDocument {
     }
 
     async loadSolutions() {
-        let response = await fetch(`php/getsolutions.php`);
-        //let response = await fetch(`http://itseelm-nt4464/rpacatalog/php/getsolutions.php`);
+        //let response = await fetch(`php/getsolutions.php`);
+        let response = await fetch(`http://itseelm-nt4464/rpacatalog/php/getsolutions.php`);
         
         let data = await response.json();
         return data;
