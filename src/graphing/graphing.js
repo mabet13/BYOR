@@ -278,6 +278,14 @@ export default class Graphing {
         }
     }
 
+
+    padZero (value) {
+        if (value < 10) {
+            return "0"+value;
+        };
+        return value;
+    }
+
     drawBlipInCoordinates(blip, coordinates, order, quadrantGroup, ringList) {
         let x = coordinates[0];
         let y = coordinates[1];
@@ -316,8 +324,19 @@ export default class Graphing {
         if (blip.description) {
             // TODO: Disabled until further notice (Share Button)
             let blipshareId = 'share-btn-' + blip.number;
-            let shareButton = blipItemDescription.append('p').html(blip.description) //+"<br>"+blip.myLink)
-            let mylink = shareButton.append('span').html(`<br><a href='${blip.link}' target='_blank'>Link</a>`);
+            let shareButton = blipItemDescription.append('p').html(blip.description); //+"<br>"+blip.myLink)
+            if (blip.link) {
+                let today = new Date();
+                let yesterday = new Date(today);
+                yesterday.setDate(today.getDate() - 1);
+                let yesterdayDate = yesterday.getFullYear()+'-'+this.padZero(yesterday.getMonth()+1)+'-'+this.padZero(yesterday.getDate());
+                let lastMonth = new Date(today);
+                lastMonth.setDate(today.getDate() - 29);
+                let lastMonthDate = lastMonth.getFullYear()+'-'+this.padZero(lastMonth.getMonth()+1)+'-'+this.padZero(lastMonth.getDate());
+                let fromTo = `&p_pDateRangeFrom=${lastMonthDate}&p_pDateRangeTo=${yesterdayDate}`;
+                let mylink = shareButton.append('span').html(`<br><a href='${blip.link}${fromTo}' target='_blank'>Link</a>`);
+            }
+
         }
         // TODO: Disabled until further notice (Share Button)
         /*
